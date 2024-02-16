@@ -4,6 +4,7 @@ project(curlex)
 set(EXE_NAME "curlex")
 set(
     SOURCE_FILES
+    CUrlFunctionTest.cpp
     main.cpp
 )
 
