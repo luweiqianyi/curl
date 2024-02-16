@@ -1,0 +1,5 @@
+/Users/mu/Desktop/curl/build/CMakeFiles/edit_cache.dir
+/Users/mu/Desktop/curl/build/CMakeFiles/rebuild_cache.dir
+/Users/mu/Desktop/curl/build/src/CMakeFiles/curlex.dir
+/Users/mu/Desktop/curl/build/src/CMakeFiles/edit_cache.dir
+/Users/mu/Desktop/curl/build/src/CMakeFiles/rebuild_cache.dir
