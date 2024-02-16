@@ -5,7 +5,7 @@
 TEST(CUrlFunctionTest, Test)
 {
     CUrlFunctionTest tInstance;
-    tInstance.Test();
+    tInstance.TestAllFunctions();
 }
 
 int main(int argc, char **argv)
