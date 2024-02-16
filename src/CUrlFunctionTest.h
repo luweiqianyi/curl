@@ -4,20 +4,23 @@
 #include <string>
 
 class CUrlFunctionTest
-{   
+{
 public:
     CUrlFunctionTest();
     ~CUrlFunctionTest();
 
-    void TestAllFunctions();
-public:
-    static size_t ReceiveHttpResponseCallback(void *contents, size_t size, size_t nmemb, void *arg);
-    void AppendHttpResponseFrom(void* src,int len);
-    
-protected:
     void SimpleHttpGetRequest();
     void SimpleHttpGetRequestAndSaveResponseToMemeory();
 
+protected:
+    // deprecated
+    void TestAllFunctions();
+
+public:
+    static size_t ReceiveHttpResponseCallback(void *contents, size_t size, size_t nmemb, void *arg);
+    void AppendHttpResponseFrom(void *src, int len);
+
+protected:
     void ClearHttpResponse();
 
 protected:

@@ -1,12 +1,6 @@
 #include <cstdio>
 #include <gtest/gtest.h>
-#include "CUrlFunctionTest.h"
-
-TEST(CUrlFunctionTest, Test)
-{
-    CUrlFunctionTest tInstance;
-    tInstance.TestAllFunctions();
-}
+#include "CUrlTest.h"
 
 int main(int argc, char **argv)
 {
