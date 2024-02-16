@@ -15,6 +15,8 @@ void CUrlFunctionTest::Test()
 }
 
 // https://everything.curl.dev/examples
+
+/// @brief 测试Http get请求
 void CUrlFunctionTest::SimpleHttpGetRequest()
 {
     CURL *curl;
