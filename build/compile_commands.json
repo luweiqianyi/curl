@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/Users/mu/Desktop/curl/build/src",
-  "command": "/usr/bin/clang++   -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -o CMakeFiles/curlex.dir/main.cpp.o -c /Users/mu/Desktop/curl/src/main.cpp",
-  "file": "/Users/mu/Desktop/curl/src/main.cpp",
-  "output": "src/CMakeFiles/curlex.dir/main.cpp.o"
-}
-]
