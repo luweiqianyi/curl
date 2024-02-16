@@ -25,7 +25,7 @@ void CUrlFunctionTest::SimpleHttpGetRequest()
     curl = curl_easy_init();
     if (curl)
     {
-        curl_easy_setopt(curl, CURLOPT_URL, "https://www.baidu.com/");
+        curl_easy_setopt(curl, CURLOPT_URL, "http://118.89.66.17:8081/");
 
         res = curl_easy_perform(curl);
         if (res != CURLE_OK)
