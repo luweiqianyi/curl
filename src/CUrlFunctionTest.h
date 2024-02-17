@@ -11,6 +11,7 @@ public:
 
     void SimpleHttpGetRequest();
     void SimpleHttpGetRequestAndSaveResponseToMemeory();
+    void SimpleHttpPostRequestAndSaveResponseToMemeory();
 
 protected:
     // deprecated

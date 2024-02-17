@@ -16,4 +16,10 @@ TEST(CUrlFunctionTest, SimpleHttpGetRequestAndSaveResponseToMemeory)
     tInstance.SimpleHttpGetRequestAndSaveResponseToMemeory();
 }
 
+TEST(CUrlFunctionTest, SimpleHttpPostRequestAndSaveResponseToMemeory)
+{
+    CUrlFunctionTest tInstance;
+    tInstance.SimpleHttpPostRequestAndSaveResponseToMemeory();
+}
+
 #endif

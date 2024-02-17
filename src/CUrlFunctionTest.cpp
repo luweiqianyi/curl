@@ -106,3 +106,52 @@ void CUrlFunctionTest::SimpleHttpGetRequestAndSaveResponseToMemeory()
 
     curl_global_cleanup();
 }
+
+void CUrlFunctionTest::SimpleHttpPostRequestAndSaveResponseToMemeory()
+{
+    ClearHttpResponse(); // 清空上一次的请求响应
+
+    CURL *curl = curl_easy_init();
+    if (curl) {
+        // 设置post请求的请求路径
+        const char* post_url = "http://localhost:8002/register";
+        curl_easy_setopt(curl, CURLOPT_URL, post_url);
+
+        // 设置响应接收回调函数和响应接收对象
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, CUrlFunctionTest::ReceiveHttpResponseCallback);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, this);
+
+        // 初始化 curl_mime 对象
+        curl_mime *mime = curl_mime_init(curl);
+
+        // 添加表单字段
+        curl_mimepart *field1 = curl_mime_addpart(mime);
+        curl_mime_name(field1, "accountName");
+        curl_mime_data(field1, "BaiJuyi", CURL_ZERO_TERMINATED);
+
+        curl_mimepart *field2 = curl_mime_addpart(mime);
+        curl_mime_name(field2, "password");
+        curl_mime_data(field2, "123456", CURL_ZERO_TERMINATED);
+
+        // 设置 POST 请求类型
+        curl_easy_setopt(curl, CURLOPT_POST, 1L);
+
+        // 将 curl_mime 对象添加到请求中
+        curl_easy_setopt(curl, CURLOPT_MIMEPOST, mime);
+
+        // 执行请求
+        CURLcode res = curl_easy_perform(curl);
+        if (res != CURLE_OK) 
+        {
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+        }
+        else
+        {
+            printf("received http response:\n%s\nreceived http response(end)\n", mHttpResponse.c_str());
+        }
+
+        // 释放资源
+        curl_mime_free(mime);
+        curl_easy_cleanup(curl);
+    }
+}
